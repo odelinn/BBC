@@ -11,4 +11,4 @@ elif sign == "*":
 elif sign == "/":
     res = a / b
 
-print(a, op, b, "=", res)
+print(a, sign, b, "=", res)
