@@ -1,1 +1,14 @@
+a = float(input())
+b = float(input())
+sign = input()
 
+if sign == "+":
+    res = a + b
+elif sign == "-":
+    res = a - b
+elif sign == "*":
+    res = a * b
+elif sign == "/":
+    res = a / b
+
+print(a, op, b, "=", res)
