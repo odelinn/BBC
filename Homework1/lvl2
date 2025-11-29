@@ -1,1 +1,24 @@
+def addition(a, b):
+    return a + b
+def subtraction(a, b):
+    return a - b
+def multiplication(a, b):
+    return a * b
+def division(a, b):
+    return a / b
 
+
+a = float(input())
+b = float(input())
+sign = input()
+
+if sign == "+":
+    res = addition(a, b)
+elif sign == "-":
+    res = subtraction(a, b)
+elif sign == "*":
+    res = multiplication(a, b)
+elif sign == "/":
+    res = division(a, b)
+
+print(a, sign, b, "=", res)
