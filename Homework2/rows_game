@@ -1,1 +1,93 @@
+def level_1(text: str, method: str):
+    if method == "upper":
+        return text.upper()
+    if method == "lower":
+        return text.lower()
+    if method == "capitalize":
+        return text.capitalize()
+    return "Доступные методы: upper, lower, capitalize"
 
+def level_2(text: str, method: str):
+    if method == "find":
+        target = input("Что найти?: ")
+        return str(text.find(target))
+    if method == "replace":
+        old = input("Что заменить?: ")
+        new = input("На что заменить?: ")
+        return text.replace(old, new)
+    if method == "count":
+        target = input("Что посчитать?: ")
+        return str(text.count(target))
+    return "Доступные методы: find, replace, count"
+
+def level_3(text: str, method: str):
+    if method == "split":
+        return str(text.split(","))
+    if method == "join":
+        parts = text.split(",")
+        return ";".join(parts)
+    return "Доступные методы: split, join"
+
+def level_4(text: str, method: str):
+    if method == "isdigit":
+        return str(text.isdigit())
+    if method == "isalpha":
+        return str(text.isalpha())
+    if method == "strip":
+        return text.strip()
+    return "Доступные методы: isdigit, isalpha, strip"
+
+def level_5(text: str):
+    new_text = text.strip()
+    parts = new_text.split(";")
+
+    parts = [p for p in parts if p != "!"]
+
+    p1 = parts[0].capitalize()
+    p2 = parts[1].lower()
+    p3 = parts[2].lower()
+    p4 = "!"
+    return f"{p1} {p2} {p3}{p4}"
+
+def game():
+    print("Добро пожаловать в игру 'Строчник'!")
+
+    while True:
+        try:
+            level = int(input("\nУровень: "))
+            if level < 1 or level > 5:
+                print("Нет такого уровня. Введите число от 1 до 5.")
+                continue
+
+            user_text = input("Строка: ")
+
+            while True:
+                if level != 5:
+                    method = input("Метод: ").strip()
+
+                if level == 1:
+                    result = level_1(user_text, method)
+                elif level == 2:
+                    result = level_2(user_text, method)
+                elif level == 3:
+                    result = level_3(user_text, method)
+                elif level == 4:
+                    result = level_4(user_text, method)
+                elif level == 5:
+                    result = level_5(user_text)
+                    print(f"\n{user_text} = {result}")
+                    break
+
+                if level != 5 and "Доступные методы:" in result:
+                    print(result)
+                elif level != 5:
+                    print(f"\n{user_text}_{method} = {result}")
+                    break
+
+        except ValueError:
+            print("Ошибка: введите число от 1 до 5")
+        except Exception as e:
+            print(f"Произошла ошибка: {e}")
+
+if __name__ == "__main__":
+    game()
