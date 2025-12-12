@@ -40,9 +40,7 @@ def level_4(text: str, method: str):
 def level_5(text: str):
     new_text = text.strip()
     parts = new_text.split(";")
-
     parts = [p for p in parts if p != "!"]
-
     p1 = parts[0].capitalize()
     p2 = parts[1].lower()
     p3 = parts[2].lower()
@@ -51,7 +49,6 @@ def level_5(text: str):
 
 def game():
     print("Добро пожаловать в игру 'Строчник'!")
-
     while True:
         try:
             level = int(input("\nУровень: "))
