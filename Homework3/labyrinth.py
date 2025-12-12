@@ -4,7 +4,6 @@ from typing import List
 N = 4
 MAX_HEALTH = 3
 MAX_INVENTORY = 8
-
 ROOM_TYPES = ["пусто", "сундук", "монстр", "ловушка", "ключ", "руна", "охранник"]
 ROOM_WEIGHTS = [35, 25, 15, 15, 5, 5, 10]
 ITEM_POOL = ["зелье", "камень", "монета", "меч", "щит"]
