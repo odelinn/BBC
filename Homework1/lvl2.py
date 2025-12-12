@@ -7,7 +7,6 @@ def multiplication(a, b):
 def division(a, b):
     return a / b
 
-
 a = float(input())
 b = float(input())
 sign = input()
